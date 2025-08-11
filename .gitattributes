@@ -1,3 +1,0 @@
-G1.mp4 filter=lfs diff=lfs merge=lfs -text
-Mini_Pi.mp4 filter=lfs diff=lfs merge=lfs -text
-anonymous.mp4 filter=lfs diff=lfs merge=lfs -text
