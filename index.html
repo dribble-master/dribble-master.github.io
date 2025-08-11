@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</title>
+  <link rel="icon" type="image/x-icon" href="static/images/T1_b.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  
+  <style>
+
+  /* 定义大学 logo 的样式 */
+  .university-logo {
+    width: 300px; /* 自定义 logo 的宽度 */
+    height: auto; /* 保持宽高比 */
+    vertical-align: middle; /* 图片与上标垂直居中对齐 */
+  }
+
+  .author-block sup {
+    vertical-align: top; /* 上标对齐到顶部 */
+    font-size: 0.8em; /* 调整上标大小 */
+  }
+
+  /* --- 单个视频居中样式 --- */
+  .single-video {
+    width: 100%;
+    display: flex; /* 使用 flex 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    flex-direction: column; /* 垂直排列（方便添加标题） */
+    margin: 20px 0; /* 增加上下间距 */
+  }
+
+  .single-video video {
+    width: 100%; /* 使用100%宽度 */
+    max-width: none; /* 移除最大宽度限制 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .single-video h2 {
+    margin-bottom: 15px; /* 标题与视频的间距 */
+    text-align: center; /* 标题居中 */
+    font-size: 1.5rem; /* 设置标题字体大小 */
+  }
+  
+  /* --- 新增 CSS 开始 --- */
+  .two-column {
+    display: flex; /* 使用 flexbox 创建两栏布局 */
+    justify-content: space-between; /* 保持两栏之间的间距 */
+    gap: 10px; /* 添加两栏之间的间距 */
+  }
+
+  .video-grid {
+    display: grid; /* 启用网格布局 */
+    grid-template-columns: repeat(2, 1fr); /* 创建两列，均分宽度 */
+    gap: 10px; /* 设置网格项之间的间距 */
+  }
+    
+  .video-container {
+    width: 100%;
+    flex: 1; /* 每栏占据相等的宽度 */
+    background: #f4f4f4; /* 可选：设置背景颜色 */
+    border-radius: 8px; /* 可选：圆角边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+    overflow: hidden; /* 防止内容溢出 */
+    text-align: center;
+    padding: 0; /* 移除内边距 */
+    margin: 0; /* 移除外边距 */
+  }
+
+  video {
+    width: 100%; /* 视频占满容器宽度 */
+    height: auto; /* 视频高度自适应 */
+    display: block; /* 移除默认的内联样式影响 */
+    max-height: 80vh; /* 限制最大高度为视口的80% */
+  }
+
+    /* 子标题样式 */
+    .video-subtitle {
+      margin-top: 10px; /* 子标题与视频的间距 */
+      font-size: 1.2rem; /* 子标题的字体大小 */
+      font-weight: bold; /* 加粗子标题 */
+      color: #333; /* 子标题颜色 */
+      text-align: center;
+      padding: 0 10px; /* 添加少量内边距 */
+    }
+
+    .publication-title {
+      font-size: 2rem;
+      font-family: 'Google Sans', sans-serif;
+      color: #2c3e50;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 0.8em;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+/*     .publication-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #3498db;
+      } */
+    
+  /* 响应式布局：在小屏幕下改为单列 */
+  @media (max-width: 768px) {
+    .two-column {
+      flex-direction: column; /* 切换为单列布局 */
+      gap: 10px; /* 减小间距 */
+    }
+        .video-grid {
+      grid-template-columns: 1fr; /* 小屏幕下改为单列 */
+    }
+    
+    video {
+      max-height: 60vh; /* 小屏幕上减小最大高度 */
+    }
+    .publication-title {
+        font-size: 1.8rem;
+    }
+  }
+  /* --- 新增 CSS 结束 --- */
+  </style>
+  
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title" style="font-size: 3.0rem;">Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Anonymous Authors
+                  </span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="static/pdfs/paper.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- ArXiv abstract Link -->
+                    <!-- <span class="link-block">
+                      <a href="https://arxiv.org/abs/2505.12679" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Youtube link -->
+                  <!-- <span class="link-block">
+                    <a href="https://youtu.be/uP84NW8j2YA" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+<!--                   <span class="link-block">
+                    <a href="https://github.com/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code(Coming Soon)</span>
+                  </a>
+                </span> -->
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="single-video">
+      <h2 class="title is-3 has-text-centered">Demo Video</h2>
+      <video muted autoplay loop controls>
+        <source src="static/videos/anonymos.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3" style="text-align: center;">Demo Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/uP84NW8j2YA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="single-video">
+      <h2 class="title is-3 has-text-centered">Dribble on Diverse Terrains</h2>
+      <video muted autoplay loop controls>
+        <source src="static/videos/terrain.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Dribble to Target</h2>
+    <div class="two-column">
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/left.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Left</div>
+      </div>
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/right.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Right</div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Ball Recovery via Active Sensing</h2>
+    <div class="two-column">
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/active1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Large-Scale Disturbance</div>
+      </div>
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/active2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Small-Scale Disturbance</div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Dribbling Direction Change</h2>
+    <div class="video-grid">
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/change1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Straight + Left Front</div>
+      </div>
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/change2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Straight + Right Front</div>
+      </div>
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/change3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Straight + Left</div>
+      </div>
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/change4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Straight + Right</div>
+      </div>
+    </div>
+  </div>
+</section> -->
+  
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="single-video">
+      <h2 class="title is-3 has-text-centered">Dribble Through Obstacles</h2>
+      <video muted autoplay loop controls>
+        <source src="static/videos/zig1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="single-video">
+      <h2 class="title is-3 has-text-centered">Dribble Through Cones into the Goal</h2>
+      <video muted autoplay loop controls>
+        <source src="static/videos/zig2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Simulation Performance on Various Humanoids</h2> <!-- 新增标题 -->
+    <div class="two-column">
+      <!-- 左侧视频 -->
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/G1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">Unitree G1</div>
+      </div>
+      <!-- 右侧视频 -->
+      <div class="video-container">
+        <video muted autoplay loop controls>
+          <source src="static/videos/Mini_Pi.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-subtitle">High Torque Mini Pi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+
+ <!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humanoid soccer dribbling is a highly challenging task that demands dexterous ball manipulation while maintaining dynamic balance. Traditional rule-based methods often struggle to achieve accurate ball control due to their reliance on fixed walking patterns and limited adaptability to real-time ball dynamics. To address these challenges, we propose a two-stage curriculum learning framework that enables a humanoid robot to acquire dribbling skills without explicit dynamics or predefined trajectories. In the first stage, the robot learns basic locomotion skills; in the second stage, we fine-tune the policy for agile dribbling maneuvers. We further introduce a virtual camera model in simulation and design heuristic rewards to encourage active sensing, promoting a broader visual range for continuous ball perception. The policy is trained in simulation and successfully transferred to a physical humanoid robot. Experimental results demonstrate that our method enables effective ball manipulation, achieving flexible and visually appealing dribbling behaviors across multiple environments. This work highlights the potential of reinforcement learning in developing agile humanoid soccer robots.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+ <!-- Paper Acknowledgement -->
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Acknowlegement</h2>
+        <div class="content has-text-justified">
+          <p>
+            We sincerely thank Booster Robotics for humanoid robot T1 hardware support and help in experiments. We appreciate valuable suggestions and guidance from Professor Mingguo Zhao. We also appreciate discussions with Professor Rui Chen, Professor Li Liu, Yushi Wang, Penghui Chen, Liqian Ma, Zhenghao Qi, Yongqiang Dou, Gabriel Margolis and Chong Zhang.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End paper Acknowledgement -->
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+@article{wang2025dribble,
+  title={Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion},
+  author={Wang, Zhuoheng and Zhou, Jinyin and Wu, Qi},
+  journal={arXiv preprint arXiv:2505.12679},
+  year={2025}
+}
+      </code></pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
